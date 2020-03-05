@@ -9,20 +9,22 @@ import ReactDOM from 'react-dom';
 // import * as serviceWorker from './serviceWorker';
 
 // ESTILOS EXTERNOS
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // COMPONENTES PROPIOS
 // import App from './app/components/App';
+
+// COMPONENTES EXTERNOS
+import { Alert } from 'react-bootstrap';
 
 //////////////////////////
 // COMPONENTE PRINCIPAL //
 //////////////////////////
 ReactDOM.render(
   <div>
-    jajaja
-    {/* <BrowserRouter>
-      <App />
-    </BrowserRouter> */}
+    <Alert variant="danger">
+      This is a alert!
+    </Alert>
   </div>,
   document.getElementById("root")
 );
