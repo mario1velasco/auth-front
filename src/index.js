@@ -5,26 +5,27 @@
 // BÁSICO
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { BrowserRouter } from 'react-router-dom';
-// import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
+import * as serviceWorker from './serviceWorker';
 
 // ESTILOS EXTERNOS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// COMPONENTES PROPIOS
-// import App from './app/components/App';
+// ESTILOS PROPIOS
+import './index.css';
 
-// COMPONENTES EXTERNOS
-import { Alert } from 'react-bootstrap';
+
+// COMPONENTES PROPIOS
+import App from './app/components/container/App.jsx';
 
 //////////////////////////
 // COMPONENTE PRINCIPAL //
 //////////////////////////
 ReactDOM.render(
   <div>
-    <Alert variant="danger">
-      This is a alert!
-    </Alert>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </div>,
   document.getElementById("root")
 );
@@ -32,4 +33,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister();
+serviceWorker.unregister();
