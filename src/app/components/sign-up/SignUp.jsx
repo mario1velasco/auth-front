@@ -26,8 +26,37 @@ const schema = yup.object({
 });
 
 
+/////////////
+// EVENTOS //
+/////////////
+function onSubmitForm(event) {
+  event.preventDefault();
+  if(this.checkPassword()) {
+    const data = {
+      email:this.state.userEmail,
+      password:this.state.userPassword,
+    }
+    userService.saveUser(data)
+    .then(
+      user => {
+        this.props.history.push(SHARED.LOGIN_PATH);
+      },
+      error => {
+        this.setState({apiError: error.message ? error.message : error })
+      }
+    );
+  }
+}
 const SignUp = () => {
-
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
   return (
     <div>
       {/* {this.getAllHelpers().renderError(this.state.apiError)}
@@ -70,9 +99,11 @@ const SignUp = () => {
                       isValid={touched.email && !errors.email}
                       isInvalid={!!errors.email}
                     />
-                    <Form.Control.Feedback>{SHARED.VIEWS.USER.FORM.FIELD_OK}</Form.Control.Feedback>
+                    <Form.Control.Feedback>
+                      {SHARED.VIEWS.COMMON.FORM.FIELD_OK}
+                    </Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid">
-                      {errors.email}
+                      {SHARED.VIEWS.COMMON.FORM.FIELD_ERROR}
                     </Form.Control.Feedback>
                   </Form.Group>
                   <Form.Group as={Col} md="12" controlId="formDescription">
@@ -86,9 +117,11 @@ const SignUp = () => {
                       isValid={touched.password && !errors.password}
                       isInvalid={!!errors.password}
                     />
-                    <Form.Control.Feedback>{SHARED.VIEWS.USER.FORM.FIELD_OK}</Form.Control.Feedback>
+                    <Form.Control.Feedback>
+                      {SHARED.VIEWS.COMMON.FORM.FIELD_OK}
+                    </Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid">
-                      {errors.password}
+                      {SHARED.VIEWS.COMMON.FORM.FIELD_ERROR}
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Form.Row>

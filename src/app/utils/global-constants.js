@@ -49,18 +49,12 @@ module.exports = Object.freeze({
       TITLE: 'Crear cuenta',
       FORM: {
         TITLE: 'Usuario',
-        FIELD_OK: 'Parece correcto!',
       },
     },
     // USER
     USER: {
       FORM: {
         TITLE: 'Usuario',
-        FIELD_OK: 'Parece correcto!',
-        ERRORS: {
-          TELEPHONE_REQUIRED: 'Teléfono es obligatorio',
-          USERNAME_REQUIRED: 'Nombre de usuario es obligatorio',
-        }
       },
       INDEX: {
         TITLE: 'Mi perfil',
@@ -78,6 +72,11 @@ module.exports = Object.freeze({
         LOG_OUT: 'Cerrar sesión',
         EDIT_PROFILE: 'Editar perfil',
         CONTACT: 'Contactar con el anunciante',
+      },
+      // FORMULARIOS
+      FORM : {
+        FIELD_OK: '',
+        FIELD_ERROR: 'Campo incorrecto',
       },
     },
   },

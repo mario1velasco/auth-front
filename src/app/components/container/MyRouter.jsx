@@ -12,6 +12,7 @@ import SHARED from '../../utils/global-constants.js';
 // COMPONENTES PROPIOS
 import About from '../about/About.jsx'
 import SignUp from '../sign-up/SignUp.jsx'
+import LogIn from '../log-in/LogIn.jsx'
 
 ////////////////
 // CONSTANTES //
@@ -41,8 +42,8 @@ const MyRouter = () => {
       {/* ////////////// */}
       {/* RUTAS PÚBLICAS */}
       {/* ////////////// */}
-      {/* <Route path={SHARED.LOGIN_PATH} component={LogIn} /> */}
-      <Route path={'/sign-up'} component={SignUp} />
+      <Route path={SHARED.LOGIN_PATH} component={LogIn} />
+      <Route path={SHARED.SIGNUP_PATH} component={SignUp} />
 
 
       {/* ////////////// */}
